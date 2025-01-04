@@ -1,188 +1,229 @@
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+         /* Estilos generales */
+         body {
+             margin: 0;
+             padding: 0;
+             font-family: 'Poppins', sans-serif;
+             background-color: #f4f4f4;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             min-height: 100vh;
+             box-sizing: border-box;
+         }
+
+         .custom-section {
+             width: 100%;
+             max-width: 500px;
+             padding: 15px;
+             box-sizing: border-box;
+         }
+
+         .floating-container {
+             width: 100%;
+             padding: 20px;
+             background: #ffffff;
+             border-radius: 15px;
+             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+             text-align: center;
+             transition: transform 0.3s ease;
+             box-sizing: border-box;
+         }
+
+         .floating-container:hover {
+             transform: translateY(-10px);
+             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+         }
+
+         .header-container {
+             width: 100%;
+             overflow: hidden;
+             border-radius: 15px;
+             margin-bottom: 20px;
+         }
+
+         .header-image {
+             width: 100%;
+             height: auto;
+             border-radius: 15px;
+         }
+
+         .name {
+             font-weight: 600;
+             font-size: 22px;
+             margin: 15px 0 5px 0;
+             color: #333333;
+         }
+
+         .button-container {
+             display: flex;
+             flex-direction: column;
+             align-items: stretch;
+             gap: 10px;
+             width: 100%;
+         }
+
+         .button {
+             display: flex;
+             align-items: center;
+             padding: 12px 20px;
+             font-size: 16px;
+             font-weight: 500;
+             color: #ffffff;
+             text-decoration: none;
+             border-radius: 10px;
+             background: #000000;
+             text-align: left;
+             display: block;
+             box-sizing: border-box;
+             width: 100%;
+         }
+
+         .button img {
+             width: 24px;
+             height: 24px;
+             margin-right: 15px;
+         }
+
+         .button:hover {
+             background-color: #333333;
+         }
+
+         .copy-button, .save-contact-button {
+             display: flex;
+             align-items: center;
+             padding: 12px 20px;
+             font-size: 16px;
+             font-weight: 500;
+             color: #ffffff;
+             text-decoration: none;
+             border-radius: 10px;
+             text-align: left;
+             width: 100%;
+             box-sizing: border-box;
+             cursor: pointer;
+         }
+
+         .copy-button {
+             background-color: #28a745;
+         }
+
+         .copy-button img, .save-contact-button img {
+             width: 24px;
+             height: 24px;
+             margin-right: 15px;
+         }
+
+         .copy-button:hover {
+             background-color: #218838;
+         }
+
+         .save-contact-button {
+             background-color: #000000;
+             margin-top: 15px;
+         }
+
+         .save-contact-button:hover {
+             background-color: #333333;
+         }
+
+         .watermark {
+             margin-top: 30px;
+             font-size: 12px;
+             color: #777777;
+             text-align: center;
+         }
+
+         .watermark a {
+             color: #000000;
+             text-decoration: none;
+             font-weight: 600;
+         }
+
+         .watermark a:hover {
+             text-decoration: underline;
+         }
+
+         /* Estilos específicos para móviles */
+         @media screen and (max-width: 600px) {
+             .name {
+                 font-size: 20px;
+             }
+
+             .button-container {
+                 gap: 8px;
+             }
+
+             .button, .copy-button, .save-contact-button {
+                 font-size: 14px;
+                 padding: 10px 15px;
+             }
+
+             .button img, .copy-button img, .save-contact-button img {
+                 width: 20px;
+                 height: 20px;
+                 margin-right: 12px;
+             }
+         }
+
+         @media screen and (max-width: 400px) {
+             .name {
+                 font-size: 18px;
+             }
+
+             .button, .copy-button, .save-contact-button {
+                 font-size: 12px;
+                 padding: 8px 12px;
+             }
+
+             .button img, .copy-button img, .save-contact-button img {
+                 width: 18px;
+                 height: 18px;
+                 margin-right: 10px;
+             }
+         }
+      </style>
    </head>
    <body>
-      <div class="custom-page-content">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         Tren de Medianoche
-         <style>
-            <!--
-               @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-               
-               body {
-                   margin: 0;
-                   padding: 0;
-                   font-family: 'Poppins', sans-serif;
-                   background-color: #f4f4f4;
-                   display: flex;
-                   justify-content: center;
-                   align-items: center;
-                   min-height: 100vh;
-               }
-               
-               .custom-section {
-                   display: flex;
-                   justify-content: center;
-                   align-items: center;
-                   width: 100%;
-                   padding: 20px;
-                   box-sizing: border-box;
-               }
-               
-               .floating-container {
-                   width: 100%;
-                   max-width: 500px;
-                   padding: 30px;
-                   background: #ffffff;
-                   border-radius: 15px;
-                   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-                   text-align: center;
-                   transition: transform 0.3s ease;
-                   box-sizing: border-box;
-               }
-               
-               .floating-container:hover {
-                   transform: translateY(-10px);
-                   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-               }
-               
-               .header-container {
-                   width: 100%;
-                   overflow: hidden;
-                   border-radius: 15px;
-                   margin-bottom: 20px;
-               }
-               
-               .header-image {
-                   width: 100%;
-                   height: auto;
-                   border-radius: 15px;
-               }
-               
-               .name {
-                   font-weight: 600;
-                   font-size: 26px;
-                   margin: 15px 0 5px 0;
-                   color: #333333;
-               }
-               
-               .button-container {
-                   display: flex;
-                   flex-direction: column;
-                   align-items: stretch;
-                   gap: 15px;
-                   width: 100%;
-               }
-               
-               .button {
-                   display: flex;
-                   align-items: center;
-                   padding: 12px 20px;
-                   font-size: 16px;
-                   font-weight: 500;
-                   color: #ffffff;
-                   text-decoration: none;
-                   border-radius: 10px;
-                   background: #000000;
-                   text-align: left;
-                   display: block;
-                   box-sizing: border-box;
-                   width: 100%;
-               }
-               
-               .button img {
-                   width: 24px;
-                   height: 24px;
-                   margin-right: 15px;
-               }
-               
-               .button:hover {
-                   background-color: #333333;
-               }
-               
-               .copy-button {
-                   display: flex;
-                   align-items: center;
-                   background-color: #28a745;
-                   color: #ffffff;
-                   border: none;
-                   border-radius: 10px;
-                   padding: 12px 20px;
-                   font-size: 16px;
-                   cursor: pointer;
-                   text-align: left;
-                   width: 100%;
-                   box-sizing: border-box;
-               }
-               
-               .copy-button img {
-                   width: 24px;
-                   height: 24px;
-                   margin-right: 15px;
-               }
-               
-               .copy-button:hover {
-                   background-color: #218838;
-               }
-               
-               .save-contact-button {
-                   display: flex;
-                   align-items: center;
-                   background-color: #000000;
-                   color: white;
-                   border: none;
-                   border-radius: 10px;
-                   padding: 12px 20px;
-                   font-size: 16px;
-                   cursor: pointer;
-                   text-align: left;
-                   width: 100%;
-                   box-sizing: border-box;
-                   margin-top: 15px;
-               }
-               
-               .save-contact-button img {
-                   width: 24px;
-                   height: 24px;
-                   margin-right: 15px;
-               }
-               
-               .save-contact-button:hover {
-                   background-color: #333333;
-               }
-               
-               .watermark {
-                   margin-top: 30px;
-                   font-size: 14px;
-                   color: #777777;
-                   text-align: center;
-               }
-               
-               .watermark a {
-                   color: #000000;
-                   text-decoration: none;
-                   font-weight: 600;
-               }
-               
-               .watermark a:hover {
-                   text-decoration: underline;
-               }
-               
-               -->
-         </style>
-         <div class="custom-section">
-            <div class="floating-container">
-               <div class="header-container"><img class="header-image" alt="Tren de Medianoche" src="./tren_de_medianoche/277157904_944018592979258_5253242053734153907_n.jpeg"></div>
-               <div class="name">Tren de Medianoche</div>
-               <div class="button-container">
-                  <a class="button" href="https://wa.me/56963223241"> <img alt="WhatsApp" src="./tren_de_medianoche/whatsapp.png"> +56 9 6322 3241 </a> <a class="button" href="mailto:bandatrendemedianoche@gmail.com"> <img alt="Correo" src="./tren_de_medianoche/email.png"> bandatrendemedianoche@gmail.com </a> <a class="button" href="https://www.instagram.com/trendemedianoche_oficial/"> <img alt="Instagram" src="./tren_de_medianoche/instagram-new.png"> Instagram: @Tren de Medianoche </a> <a class="button" href="https://open.spotify.com/intl-es/artist/2ZRyGZfKgNjNKbry4Aqv7J?si=oVDUx2a2ROKxU_K5oKML2w"> <img alt="Spotify" src="./tren_de_medianoche/spotify.png"> Spotify: Tren de Medianoche </a> <a class="button" href="https://www.facebook.com/bandaTDMN"> <img alt="Facebook" src="./tren_de_medianoche/facebook-new.png"> Facebook </a> <button class="copy-button" onclick="copyTransferData()"> <img alt="Copiar" src="./tren_de_medianoche/copy.png"> Copiar Datos de Transferencia </button>
-               </div>
-               <button class="save-contact-button" id="save-contact"> <img alt="Guardar Contacto" src="./tren_de_medianoche/save.png"> Guardar Contacto </button>
+      <div class="custom-section">
+         <div class="floating-container">
+            <div class="header-container">
+               <img class="header-image" alt="Tren de Medianoche" src="./tren_de_medianoche/277157904_944018592979258_5253242053734153907_n.jpeg">
             </div>
+            <div class="name">Tren de Medianoche</div>
+            <div class="button-container">
+               <a class="button" href="https://wa.me/56963223241">
+                  <img alt="WhatsApp" src="./tren_de_medianoche/whatsapp.png"> +56 9 6322 3241 
+               </a>
+               <a class="button" href="mailto:bandatrendemedianoche@gmail.com">
+                  <img alt="Correo" src="./tren_de_medianoche/email.png"> bandatrendemedianoche@gmail.com 
+               </a>
+               <a class="button" href="https://www.instagram.com/trendemedianoche_oficial/">
+                  <img alt="Instagram" src="./tren_de_medianoche/instagram-new.png"> Instagram: @Tren de Medianoche 
+               </a>
+               <a class="button" href="https://open.spotify.com/intl-es/artist/2ZRyGZfKgNjNKbry4Aqv7J?si=oVDUx2a2ROKxU_K5oKML2w">
+                  <img alt="Spotify" src="./tren_de_medianoche/spotify.png"> Spotify: Tren de Medianoche 
+               </a>
+               <a class="button" href="https://www.facebook.com/bandaTDMN">
+                  <img alt="Facebook" src="./tren_de_medianoche/facebook-new.png"> Facebook 
+               </a>
+               <button class="copy-button" onclick="copyTransferData()">
+                  <img alt="Copiar" src="./tren_de_medianoche/copy.png"> Copiar Datos de Transferencia 
+               </button>
+            </div>
+            <button class="save-contact-button" id="save-contact">
+               <img alt="Guardar Contacto" src="./tren_de_medianoche/save.png"> Guardar Contacto 
+            </button>
          </div>
-         <script>
-            function copyTransferData() {
+      </div>
+      <script>
+         function copyTransferData() {
             const transferData = `
             Cuenta Corriente
             Banco Scotiabank
@@ -192,7 +233,6 @@
             manuel.mercado@usach.cl
             `;
             
-            // Check if the Clipboard API is available
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(transferData)
                     .then(() => {
@@ -203,20 +243,17 @@
                         alert('Error al copiar los datos. Ver consola para detalles.');
                     });
             } else {
-                // Fallback if Clipboard API isn't supported
                 console.warn('Clipboard API is not supported.');
                 alert('No se pudo acceder al portapapeles. El navegador no es compatible con esta función.');
             }
-            }
-                
-                        
-              document.getElementById('save-contact').addEventListener('click', function () {
-                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-                let vCardData;
-            
-                // Verifica si el usuario está en un dispositivo Android o no
-                if (/android/i.test(userAgent)) {
-                  vCardData = `
+         }
+
+         document.getElementById('save-contact').addEventListener('click', function () {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            let vCardData;
+
+            if (/android/i.test(userAgent)) {
+                vCardData = `
             BEGIN:VCARD
             VERSION:2.1
             FN:Tren de Medianoche
@@ -227,37 +264,18 @@
             URL:https://www.facebook.com/bandaTDMN
             NOTE:Datos de Transferencia: Cuenta Corriente, Banco Scotiabank, 000974470276, Manuel Mercado Alvarez, Rut: 18169100-K, manuel.mercado@usach.cl
             END:VCARD
-                  `;
-                } else {
-                  vCardData = `
-            BEGIN:VCARD
-            VERSION:3.0
-            FN:Tren de Medianoche
-            TEL:+56963223241
-            EMAIL:bandatrendemedianoche@gmail.com
-            URL:https://www.instagram.com/trendemedianoche_oficial/
-            URL:https://open.spotify.com/intl-es/artist/2ZRyGZfKgNjNKbry4Aqv7J?si=oVDUx2a2ROKxU_K5oKML2w
-            URL:https://www.facebook.com/bandaTDMN
-            NOTE:Datos de Transferencia: Cuenta Corriente, Banco Scotiabank, 000974470276, Manuel Mercado Alvarez, Rut: 18169100-K, manuel.mercado@usach.cl
-            END:VCARD
-                  `;
-                }
-            
-                // Creamos un Blob de texto con el vCard
+            `;
+
                 const blob = new Blob([vCardData], { type: 'text/vcard' });
-            
-                // Creamos un enlace temporal para descargar el archivo
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = 'Tren_de_Medianoche.vcf';  // Nombre del archivo de contacto
-            
-                // Simulamos un clic en el enlace para iniciar la descarga
-                link.click();
-            
-                // Revocamos el objeto URL después de la descarga
-                URL.revokeObjectURL(link.href);
-              });
-         </script>
-      </div>
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Tren_de_Medianoche.vcf';
+                a.click();
+            } else {
+                alert("La opción de guardar el contacto no está soportada en este navegador.");
+            }
+         });
+      </script>
    </body>
 </html>
