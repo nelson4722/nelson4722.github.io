@@ -14,8 +14,6 @@ body {
 }
 
 /* Estilos para el contenedor del logo */
-/* Estilos para el contenedor del logo */
-
 .logo-wrapper {
    display: flex; /* Usamos Flexbox para distribuir los elementos en una fila */
    justify-content: flex-start; /* Alinea los elementos al inicio de la fila */
@@ -42,6 +40,24 @@ body {
    background-repeat: no-repeat; /* Evita que la imagen se repita */
    background-position: center; /* Centra la imagen dentro del contenedor */
    transition: transform 0.3s ease; /* Efecto de animación */
+}
+
+/* Reproductor de audio */
+.audio {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 12px 20px;
+   font-size: 16px;
+   font-weight: 500;
+   color: #ffffff;
+   text-decoration: none;
+   border-radius: 10px;
+   background: #000000;
+   text-align: center;
+   display: block;
+   box-sizing: border-box;
+   width: 100%;
 }
 
 .custom-section {
@@ -297,5 +313,8 @@ body {
       cursor: pointer;
       border-radius: 50%;
    }
+
+
+
 
 }
