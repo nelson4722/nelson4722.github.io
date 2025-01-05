@@ -2,221 +2,36 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
       <title>Tren de Medianoche</title>
-      <style>
-         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-         
-         /* Estilos generales */
-         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-         }
-         
-         .custom-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-         }
-         
-         .floating-container {
-            width: 100%;
-            max-width: 500px;
-            padding: 30px;
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-            box-sizing: border-box;
-         }
-         
-         .floating-container:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-         }
-         
-         .header-container {
-            width: 100%;
-            overflow: hidden;
-            border-radius: 15px;
-            margin-bottom: 20px;
-         }
-         
-         .header-image {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-         }
-         
-         .name {
-            font-weight: 600;
-            font-size: 26px;
-            margin: 15px 0 5px 0;
-            color: #333333;
-         }
-         
-         .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 15px;
-            width: 100%;
-         }
-         
-         .button {
-            display: flex;
-            align-items: center; /* Centra verticalmente los iconos y el texto */
-            justify-content: center; /* Centra los elementos horizontalmente */
-            padding: 12px 20px;
-            font-size: 16px;
-            font-weight: 500;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 10px;
-            background: #000000;
-            text-align: center;
-            display: block;
-            box-sizing: border-box;
-            width: 100%;
-         }
-         
-         .button img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px; /* Ajuste del espacio entre el icono y el texto */
-            vertical-align: middle; /* Alinea el icono al centro del texto */
-         }
-         
-         .button:hover {
-            background-color: #333333;
-         }
-         
-         .copy-button {
-            display: flex;
-            align-items: center; /* Centra verticalmente los iconos y el texto */
-            justify-content: center; /* Centra los elementos horizontalmente */
-            background-color: #28a745;
-            color: #ffffff;
-            border: none;
-            border-radius: 10px;
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-         }
-         
-         .copy-button img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px; /* Ajuste del espacio entre el icono y el texto */
-            vertical-align: middle; /* Alinea el icono al centro del texto */
-         }
-         
-         .copy-button:hover {
-            background-color: #218838;
-         }
-         
-         .save-contact-button {
-            display: flex;
-            align-items: center; /* Centra verticalmente los iconos y el texto */
-            justify-content: center; /* Centra los elementos horizontalmente */
-            background-color: #000000;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 15px;
-         }
-         
-         .save-contact-button img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px; /* Ajuste del espacio entre el icono y el texto */
-            vertical-align: middle; /* Alinea el icono al centro del texto */
-         }
-         
-         .save-contact-button:hover {
-            background-color: #333333;
-         }
-         
-         .watermark {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #777777;
-            text-align: center;
-         }
-         
-         .watermark a {
-            color: #000000;
-            text-decoration: none;
-            font-weight: 600;
-         }
-         
-         .watermark a:hover {
-            text-decoration: underline;
-         }
+      <link rel="icon" href="./tren_de_medianoche/logo.png" type="image/x-icon">
 
-         /* Estilos para dispositivos móviles */
-         @media (max-width: 600px) {
-            .floating-container {
-               padding: 20px;
-            }
-
-            .name {
-               font-size: 22px;
-            }
-
-            .button {
-               font-size: 14px;
-               padding: 10px 15px;
-            }
-
-            .copy-button, .save-contact-button {
-               font-size: 14px;
-               padding: 10px 15px;
-            }
-
-            .header-image {
-               border-radius: 10px;
-            }
-
-            .button-container {
-               gap: 10px;
-            }
-
-            .button img, .copy-button img, .save-contact-button img {
-               width: 20px;
-               height: 20px;
-               margin-right: 10px;
-            }
-         }
-      </style>
    </head>
    <body>
       <div class="custom-page-content">
+        <!-- Logo Section -->
+
          <div class="custom-section">
             <div class="floating-container">
+                 <div class="logo-wrapper">
+                    <div class="logo-container"></div> <!-- Contenedor del logo -->
+                    <div class="logo"></div> <!-- El logo en sí -->
+                </div>
                <div class="header-container">
-                  <img class="header-image" alt="Tren de Medianoche" src="./tren_de_medianoche/277157904_944018592979258_5253242053734153907_n.jpeg">
+                  <div class="header-images">
+                     <img alt="Imagen 1" src="./tren_de_medianoche/323288311_553218996680854_8275761172948079720_n.jpg">
+                     <img alt="Imagen 2" src="./tren_de_medianoche/277157904_944018592979258_5253242053734153907_n.jpeg">
+                     <img alt="Imagen 3" src="./tren_de_medianoche/348441768_550723740593684_8018548674131979303_n.jpg">
+                     <img alt="Imagen 4" src="./tren_de_medianoche/469315191_1594349671198843_2030748612920409032_n.jpg">
+                     
+                     <!-- Add more images here -->
+                  </div>
+                  <div class="carousel-buttons">
+                     <button class="carousel-button" onclick="moveHeaderSlide(-1)">&#10094;</button>
+                     <button class="carousel-button" onclick="moveHeaderSlide(1)">&#10095;</button>
+                  </div>
                </div>
-               <div class="name">Tren de Medianoche</div>
+              
                <div class="button-container">
                   <a class="button" href="https://www.instagram.com/trendemedianoche_oficial/">
                      <img alt="Instagram" src="./tren_de_medianoche/instagram-new.png"> Instagram 
@@ -245,6 +60,23 @@
          </div>
 
          <script>
+
+
+            let currentHeaderSlide = 0;
+
+            function moveHeaderSlide(direction) {
+               const slides = document.querySelectorAll('.header-images img');
+               const totalSlides = slides.length;
+               currentHeaderSlide = (currentHeaderSlide + direction + totalSlides) % totalSlides;
+               const offset = -currentHeaderSlide * 100;
+               document.querySelector('.header-images').style.transform = `translateX(${offset}%)`;
+            }
+
+            // Optional: Automatically change images every 5 seconds
+            setInterval(() => {
+               moveHeaderSlide(1);
+            }, 5000);
+
             function copyTransferData() {
                const transferData = `
                   Cuenta Corriente
