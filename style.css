@@ -246,75 +246,119 @@ body {
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 600px) {
-   .floating-container {
-      padding: 20px;
+    /* General */
+    body {
+        font-size: 14px; /* Reducir el tamaño base de la fuente */
+    }
+
+    .logo-wrapper {
+      display: flex; /* Usamos Flexbox para distribuir los elementos en una fila */
+      justify-content: flex-start; /* Alinea los elementos al inicio de la fila */
+      align-items: center; /* Alinea los elementos verticalmente al centro */
+      gap: 1px; /* Controla el espacio entre los dos elementos */
+      padding: 0px;
    }
 
-   .name {
-      font-size: 22px;
-   }
+    /* Logo */
+    .logo-container {
+   height: 60px; /* Altura del contenedor */
+   width: 30%; /* Anchura del contenedor */
+   background-size: contain; /* Ajusta el tamaño de la imagen al contenedor */
+   background-repeat: no-repeat; /* Evita que la imagen se repita */
+   background-position: center; /* Centra la imagen dentro del contenedor */
+   transition: transform 0.3s ease; /* Efecto de animación */
+}
 
-   .button {
-      font-size: 14px;
-      padding: 10px 15px;
-   }
+/* Estilos para el logo */
+.logo {
+   height:60px; /* Altura del logo */
+   width: 65%; /* Anchura del logo */
+   background-size: contain; /* Ajusta el tamaño de la imagen al contenedor */
+   background-repeat: no-repeat; /* Evita que la imagen se repita */
+   background-position: center; /* Centra la imagen dentro del contenedor */
+   transition: transform 0.3s ease; /* Efecto de animación */
+}
 
-   .copy-button, .save-contact-button {
-      font-size: 14px;
-      padding: 10px 15px;
-   }
+    /* Botones */
+    .button-container {
+        gap: 10px; /* Reducir el espacio entre botones */
+    }
 
-   .header-image {
-      border-radius: 10px;
-   }
+    .button, .copy-button, .save-contact-button {
+        font-size: 14px; /* Reducir el tamaño de los botones */
+        padding: 10px 15px; /* Reducir el padding de los botones */
+    }
 
-   .button-container {
-      gap: 10px;
-   }
+    .button img, .copy-button img, .save-contact-button img {
+        width: 20px; /* Reducir el tamaño de los íconos */
+        height: 20px;
+    }
 
-   .button img, .copy-button img, .save-contact-button img {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-   }
+    /* Contenedor flotante */
+    .floating-container {
+        padding: 20px; /* Reducir el padding */
+    }
 
-   /* Carrusel de imágenes */
-   .header-container {
-      max-width: 100%;
-   }
+    .name {
+        font-size: 22px; /* Reducir el tamaño del nombre */
+        margin: 10px 0; /* Reducir el margen */
+    }
 
-   .header-images {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-   }
+    /* Carrusel de imágenes */
+    .header-container {
+        max-width: 100%; /* Hacer que las imágenes ocupen el 100% del contenedor */
+    }
 
-   .header-images img {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-   }
+    .header-images img {
+        width: 100%; /* Asegurarse de que las imágenes no se desborden */
+    }
 
-   .carousel-buttons {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      width: 100%;
-   }
+    .carousel-buttons {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        width: 100%;
+    }
 
-   .carousel-button {
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 15px;
-      cursor: pointer;
-      border-radius: 50%;
-   }
+    .carousel-button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
 
+    /* Ajustes en la barra de progreso */
+    .progress-container {
+        width: 100%; /* Asegurarse de que la barra de progreso ocupe todo el ancho disponible */
+    }
 
+    .progress-bar {
+        background: #ff6600;
+        height: 5px;
+        width: 0%;
+        border-radius: 5px;
+    }
 
+    /* Reproductor de audio */
+    .audio {
+        font-size: 14px;
+        padding: 10px 15px;
+        width: 100%;
+    }
 
+    /* Watermark */
+    .watermark {
+        font-size: 12px; /* Reducir el tamaño del watermark */
+        margin-top: 20px;
+    }
+
+    .watermark a {
+        font-size: 12px; /* Reducir el tamaño del texto del watermark */
+    }
 }
