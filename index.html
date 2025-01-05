@@ -5,25 +5,28 @@
       <link rel="stylesheet" href="style.css">
       <title>Tren de Medianoche</title>
       <link rel="icon" href="./tren_de_medianoche/logo.png" type="image/x-icon">
-
    </head>
    <body>
+      <!-- Reproductor de audio (Música de fondo) -->
       <div class="custom-page-content">
-        <!-- Logo Section -->
-
+         <!-- Logo Section -->
          <div class="custom-section">
             <div class="floating-container">
-                 <div class="logo-wrapper">
-                    <div class="logo-container"></div> <!-- Contenedor del logo -->
-                    <div class="logo"></div> <!-- El logo en sí -->
-                </div>
+               <div class="logo-wrapper">
+                  <div class="logo-container"></div>
+                  <!-- Contenedor del logo -->
+                  <div class="logo"></div>
+                  <!-- El logo en sí -->
+               </div>
+               <audio controls autoplay loop>
+                  <source src="./tren_de_medianoche/sientes_como.mp3" type="audio/mpeg">
+               </audio>
                <div class="header-container">
                   <div class="header-images">
                      <img alt="Imagen 1" src="./tren_de_medianoche/323288311_553218996680854_8275761172948079720_n.jpg">
                      <img alt="Imagen 2" src="./tren_de_medianoche/277157904_944018592979258_5253242053734153907_n.jpeg">
                      <img alt="Imagen 3" src="./tren_de_medianoche/348441768_550723740593684_8018548674131979303_n.jpg">
                      <img alt="Imagen 4" src="./tren_de_medianoche/469315191_1594349671198843_2030748612920409032_n.jpg">
-                     
                      <!-- Add more images here -->
                   </div>
                   <div class="carousel-buttons">
@@ -31,39 +34,35 @@
                      <button class="carousel-button" onclick="moveHeaderSlide(1)">&#10095;</button>
                   </div>
                </div>
-              
                <div class="button-container">
                   <a class="button" href="https://www.instagram.com/trendemedianoche_oficial/">
-                     <img alt="Instagram" src="./tren_de_medianoche/instagram-new.png"> Instagram 
+                  <img alt="Instagram" src="./tren_de_medianoche/instagram-new.png"> Instagram 
                   </a> 
                   <a class="button" href="https://open.spotify.com/intl-es/artist/2ZRyGZfKgNjNKbry4Aqv7J?si=oVDUx2a2ROKxU_K5oKML2w">
-                     <img alt="Spotify" src="./tren_de_medianoche/spotify.png"> Spotify 
+                  <img alt="Spotify" src="./tren_de_medianoche/spotify.png"> Spotify 
                   </a> 
                   <a class="button" href="https://www.facebook.com/bandaTDMN">
-                     <img alt="Facebook" src="./tren_de_medianoche/facebook-new.png"> Facebook 
+                  <img alt="Facebook" src="./tren_de_medianoche/facebook-new.png"> Facebook 
                   </a> 
                   <a class="button" href="https://youtube.com/@trendemedianochechile4904?si=ruAaxUA_FbG6FnFv">
-                     <img alt="Youtube" src="./tren_de_medianoche/youtube.png"> Youtube 
+                  <img alt="Youtube" src="./tren_de_medianoche/youtube.png"> Youtube 
                   </a> 
                   <a class="button" href="https://wa.me/56963223241">
-                     <img alt="WhatsApp" src="./tren_de_medianoche/whatsapp.png"> Whatsapp
+                  <img alt="WhatsApp" src="./tren_de_medianoche/whatsapp.png"> Whatsapp
                   </a> 
                   <a class="button" href="mailto:bandatrendemedianoche@gmail.com">
-                     <img alt="Correo" src="./tren_de_medianoche/email.png"> Email
+                  <img alt="Correo" src="./tren_de_medianoche/email.png"> Email
                   </a> 
                   <button class="copy-button" onclick="copyTransferData()"> 
-                     <img alt="Copiar" src="./tren_de_medianoche/copy.png"> Copiar Datos de Transferencia 
+                  <img alt="Copiar" src="./tren_de_medianoche/copy.png"> Copiar Datos de Transferencia 
                   </button>
                </div>
                <!--<button class="save-contact-button" id="save-contact"> <img alt="Guardar Contacto" src="./tren_de_medianoche/save.png"> Guardar Contacto </button>-->
             </div>
          </div>
-
          <script>
-
-
             let currentHeaderSlide = 0;
-
+            
             function moveHeaderSlide(direction) {
                const slides = document.querySelectorAll('.header-images img');
                const totalSlides = slides.length;
@@ -71,12 +70,12 @@
                const offset = -currentHeaderSlide * 100;
                document.querySelector('.header-images').style.transform = `translateX(${offset}%)`;
             }
-
+            
             // Optional: Automatically change images every 5 seconds
             setInterval(() => {
                moveHeaderSlide(1);
             }, 5000);
-
+            
             function copyTransferData() {
                const transferData = `
                   Cuenta Corriente
@@ -101,7 +100,7 @@
                   alert('No se pudo acceder al portapapeles. El navegador no es compatible con esta función.');
                }
             }
-
+            
              /*document.getElementById('save-contact').addEventListener('click', function () {
                 const userAgent = navigator.userAgent || navigator.vendor || window.opera;
                 let vCardData;
