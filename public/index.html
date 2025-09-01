@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Sorteo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="modal">
+  <div id="modalContent">
+    <h2>Ingresa tu nombre</h2>
+    <input type="text" id="nombreInput" placeholder="Ej: Nelson">
+    <br>
+    <button class="blue" id="aceptarBtn">Aceptar</button>
+  </div>
+</div>
+
+<h1 id="saludo">Hola “Invitado”, ganaste lo siguiente:</h1>
+
+<div>
+  <div class="card">
+    <div class="emoji">🥪</div>
+    <div id="consumible">Consumible</div>
+  </div>
+  <div class="card">
+    <div class="emoji">🍹</div>
+    <div id="bebestible">Bebestible</div>
+  </div>
+  <div class="card">
+    <div class="emoji">💊</div>
+    <div id="articulo">Artículo</div>
+  </div>
+</div>
+
+<div id="acciones">
+  <button class="green" id="confirmarBtn">Confirmar</button>
+  <button class="red" id="reintentarBtn">Reintentar</button>
+</div>
+
+<button class="blue" id="homeBtn" style="display:none;">Home</button>
+
+<script src="script.js"></script>
+</body>
+</html>
