@@ -1,130 +1,114 @@
 body { 
-  font-family: 'Arial', sans-serif; 
+  font-family: sans-serif; 
   text-align: center; 
   padding: 20px; 
-  background: #f2f2f2;
-  margin: 0;
-}
-
-#premiosContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap; /* horizontal tipo tragamonedas */
-  overflow: hidden;
-  margin: 20px 0;
+  background: linear-gradient(180deg, #004b87, #0a1931); 
+  color: #fff;
 }
 
 .card { 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 450px;
-  height: 150px;
-  margin: 0 5px;
-  padding: 35px;
+  display: inline-block; 
+  width: 160px; 
+  margin: 10px; 
+  padding: 20px; 
+  border: 2px solid #fff; 
   border-radius: 12px; 
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  background: rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
 }
-
 .card:hover {
   transform: scale(1.05);
 }
 
+/* Para emojis (texto) */
 .emoji { 
-  font-size: 60px; 
-  margin-bottom: 10px;
-  height: 70px;
+  font-size: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.nombre {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  word-break: break-word;
+/* Para imágenes de premio */
+.emoji-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 button { 
-  margin: 10px 5px; 
-  padding: 15px 25px; 
+  margin: 10px; 
+  padding: 12px 24px; 
   border-radius: 8px; 
   border: none; 
   color: #fff; 
   font-weight: bold; 
   cursor: pointer; 
   font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  transition: transform 0.2s, background 0.2s;
+}
+button:hover:not(.disabled) { 
+  transform: scale(1.05); 
 }
 
 .green { background-color: #28a745; }
 .red { background-color: #dc3545; }
-.blue { background-color: #004b87; }
+.blue { background-color: #007bff; }
+.disabled { 
+  background-color: #6c757d !important; 
+  cursor: not-allowed; 
+  opacity: 0.7;
+}
 
-/* Modal */
 #modal { 
   position: fixed; 
-  top: 0; left: 0; 
-  width: 100%; 
-  height: 100%; 
-  background: rgba(0,0,0,0.6); 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  padding: 10px;
+  top:0; left:0; width:100%; height:100%; 
+  background:rgba(0,0,0,0.7); 
+  display:flex; justify-content:center; align-items:center; 
 }
 
 #modalContent { 
   background:#fff; 
-  padding: 25px; 
-  border-radius: 12px; 
-  width: 90%;
-  max-width: 350px;
-  text-align: center; 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color:#000;
+  padding:20px; 
+  border-radius:10px; 
+  width:300px; 
+  text-align:center; 
 }
 
 input { 
-  width: 90%; 
-  padding: 12px; 
-  margin-bottom: 15px; 
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  width: 80%; 
+  padding:10px; 
+  margin-bottom:10px; 
+  border:1px solid #ccc; 
+  border-radius:6px;
   font-size: 16px;
 }
 
-/* Animación tipo tragamonedas */
-@keyframes spin {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-100%); }
+/* Estilo tipo tragamonedas */
+#premios {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.card.spin .emoji {
-  animation: spin 0.15s infinite;
-}
-
-/* Adaptativo móvil */
-@media (max-width: 500px) {
-  .card {
-    width: 90px;
-    height: 120px;
-    padding: 10px;
+/* Adaptación para móviles */
+@media (max-width: 600px) {
+  .card { 
+    width: 100px; 
+    padding: 10px; 
   }
-
-  .emoji {
-    font-size: 45px;
-    height: 55px;
+  .emoji, .emoji-img { 
+    font-size: 80px; 
+    width: 80px; 
+    height: 80px;
   }
-
-  .nombre {
-    font-size: 14px;
-  }
-
-  button {
-    padding: 12px 20px;
-    font-size: 14px;
+  button { 
+    width: 90%; 
+    font-size: 14px; 
   }
 }

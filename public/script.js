@@ -43,13 +43,19 @@ function actualizarPremios() {
   const b = getRandom(categorias.bebestible);
   const a = getRandom(categorias.articulo);
 
-  consumibleIcon.innerHTML = c.imagen ? `<img src="${c.imagen}" width="80">` : defaultEmoji.consumible;
+  consumibleIcon.innerHTML = c.imagen
+    ? `<img src="${c.imagen}" class="emoji-img">`
+    : `<span class="emoji">${defaultEmoji.consumible}</span>`;
   consumibleNombre.textContent = c.nombre;
 
-  bebestibleIcon.innerHTML = b.imagen ? `<img src="${b.imagen}" width="80">` : defaultEmoji.bebestible;
+  bebestibleIcon.innerHTML = b.imagen
+    ? `<img src="${b.imagen}" class="emoji-img">`
+    : `<span class="emoji">${defaultEmoji.bebestible}</span>`;
   bebestibleNombre.textContent = b.nombre;
 
-  articuloIcon.innerHTML = a.imagen ? `<img src="${a.imagen}" width="80">` : defaultEmoji.articulo;
+  articuloIcon.innerHTML = a.imagen
+    ? `<img src="${a.imagen}" class="emoji-img">`
+    : `<span class="emoji">${defaultEmoji.articulo}</span>`;
   articuloNombre.textContent = a.nombre;
 }
 
@@ -78,6 +84,7 @@ reintentarBtn.onclick = () => {
   } else {
     reintentarBtn.disabled = true;
     reintentarBtn.textContent = "Sin intentos";
+    reintentarBtn.classList.add("disabled");
   }
 };
 
@@ -86,11 +93,11 @@ homeBtn.onclick = () => {
   intentos = 0;
   confirmado = false;
 
-  consumibleIcon.textContent = defaultEmoji.consumible;
+  consumibleIcon.innerHTML = `<span class="emoji">${defaultEmoji.consumible}</span>`;
   consumibleNombre.textContent = "Consumible";
-  bebestibleIcon.textContent = defaultEmoji.bebestible;
+  bebestibleIcon.innerHTML = `<span class="emoji">${defaultEmoji.bebestible}</span>`;
   bebestibleNombre.textContent = "Bebestible";
-  articuloIcon.textContent = defaultEmoji.articulo;
+  articuloIcon.innerHTML = `<span class="emoji">${defaultEmoji.articulo}</span>`;
   articuloNombre.textContent = "Artículo";
 
   saludo.textContent = 'Hola "Invitado", ganaste lo siguiente:';
@@ -100,6 +107,7 @@ homeBtn.onclick = () => {
   reintentarBtn.style.display = "inline-block";
   reintentarBtn.disabled = false;
   reintentarBtn.textContent = "Reintentar";
+  reintentarBtn.classList.remove("disabled");
 };
 
 // Cargar categorías

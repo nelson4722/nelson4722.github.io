@@ -1,25 +1,71 @@
 {
-  "consumible": [
-    { "nombre": "empanada", "imagen": "/images/empanada.png" },
-    { "nombre": "anticucho" },
-    { "nombre": "choripán" },
-    { "nombre": "tapadito" },
-    { "nombre": "brocheta" }
-  ],
-  "bebestible": [
-    { "nombre": "mote con huesillo" },
-    { "nombre": "piscola" },
-    { "nombre": "cerveza" },
-    { "nombre": "terremoto" },
-    { "nombre": "tropical gin" },
-    { "nombre": "ramazzotti" }
-  ],
-  "articulo": [
-    { "nombre": "viagra" },
-    { "nombre": "paracetamol" },
-    { "nombre": "parche león" },
-    { "nombre": "propóleo" },
-    { "nombre": "pañuelos desechables" },
-    { "nombre": "parche curita" }
-  ]
+    "consumible": [
+        {
+            "nombre": "empanada",
+            "imagen": "/images/empanada.png"
+        },
+        {
+            "nombre": "anticucho",
+            "imagen": "/images/anticucho.png"
+        },
+        {
+            "nombre": "choripán",
+            "imagen": "/images/choripan.png"
+
+        },
+        {
+            "nombre": "tapadito"
+        },
+        {
+            "nombre": "brocheta"
+        }
+    ],
+    "bebestible": [
+        {
+            "nombre": "mote con huesillo",
+            "imagen": "/images/mote-con-huesillo.png"
+        },
+        {
+            "nombre": "piscola",
+            "imagen": "/images/piscola.png"
+        },
+        {
+            "nombre": "cerveza",
+            "imagen": "/images/cerveza.png"
+        },
+        {
+            "nombre": "terremoto",
+            "imagen": "/images/terremoto.png"
+        },
+        {
+            "nombre": "tropical gin"
+        },
+        {
+            "nombre": "ramazzotti"
+        },
+        {
+            "nombre":"chicha",
+            "imagen": "/images/chicha.png"
+        }
+    ],
+    "articulo": [
+        {
+            "nombre": "viagra"
+        },
+        {
+            "nombre": "paracetamol"
+        },
+        {
+            "nombre": "parche león"
+        },
+        {
+            "nombre": "propóleo"
+        },
+        {
+            "nombre": "pañuelos desechables"
+        },
+        {
+            "nombre": "parche curita"
+        }
+    ]
 }
