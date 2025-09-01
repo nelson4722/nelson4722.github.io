@@ -1,0 +1,25 @@
+{
+  "consumible": [
+    { "nombre": "empanada", "imagen": "/images/empanada.png" },
+    { "nombre": "anticucho" },
+    { "nombre": "choripán" },
+    { "nombre": "tapadito" },
+    { "nombre": "brocheta" }
+  ],
+  "bebestible": [
+    { "nombre": "mote con huesillo" },
+    { "nombre": "piscola" },
+    { "nombre": "cerveza" },
+    { "nombre": "terremoto" },
+    { "nombre": "tropical gin" },
+    { "nombre": "ramazzotti" }
+  ],
+  "articulo": [
+    { "nombre": "viagra" },
+    { "nombre": "paracetamol" },
+    { "nombre": "parche león" },
+    { "nombre": "propóleo" },
+    { "nombre": "pañuelos desechables" },
+    { "nombre": "parche curita" }
+  ]
+}

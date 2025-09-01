@@ -1,51 +1,65 @@
-const categorias = {
-  consumible: ["empanada", "anticucho", "choripán", "tapadito", "brocheta"],
-  bebestible: ["mote con huesillo","piscola","cerveza","terremoto","tropical gin","ramazzotti"],
-  articulo: ["viagra","paracetamol","parche león","propóleo","pañuelos desechables","parche curita"]
-};
-
+let categorias = {};
 let nombre = "";
 let intentos = 0;
 let confirmado = false;
 
-const getRandom = arr => arr[Math.floor(Math.random() * arr.length)];
-
 const modal = document.getElementById("modal");
 const nombreInput = document.getElementById("nombreInput");
 const aceptarBtn = document.getElementById("aceptarBtn");
-
-const consumibleDiv = document.getElementById("consumible");
-const bebestibleDiv = document.getElementById("bebestible");
-const articuloDiv = document.getElementById("articulo");
 const saludo = document.getElementById("saludo");
-
 const confirmarBtn = document.getElementById("confirmarBtn");
 const reintentarBtn = document.getElementById("reintentarBtn");
 const homeBtn = document.getElementById("homeBtn");
 
-function generarConEfecto() {
-  let counter = 0;
-  const interval = setInterval(() => {
-    consumibleDiv.textContent = getRandom(categorias.consumible);
-    bebestibleDiv.textContent = getRandom(categorias.bebestible);
-    articuloDiv.textContent = getRandom(categorias.articulo);
-    counter++;
-  }, 100);
+// Cards y emojis
+const consumibleIcon = document.getElementById("consumibleIcon");
+const consumibleNombre = document.getElementById("consumibleNombre");
+const bebestibleIcon = document.getElementById("bebestibleIcon");
+const bebestibleNombre = document.getElementById("bebestibleNombre");
+const articuloIcon = document.getElementById("articuloIcon");
+const articuloNombre = document.getElementById("articuloNombre");
 
+const defaultEmoji = {
+  consumible: "🍴",
+  bebestible: "🥤",
+  articulo: "💊"
+};
+
+// Obtener elemento aleatorio
+const getRandom = arr => arr[Math.floor(Math.random() * arr.length)];
+
+// Generar efecto "ruleta"
+function generarConEfecto() {
+  const interval = setInterval(actualizarPremios, 100);
   setTimeout(() => {
     clearInterval(interval);
-    consumibleDiv.textContent = getRandom(categorias.consumible);
-    bebestibleDiv.textContent = getRandom(categorias.bebestible);
-    articuloDiv.textContent = getRandom(categorias.articulo);
+    actualizarPremios();
   }, 1500);
 }
 
+// Actualizar premios
+function actualizarPremios() {
+  const c = getRandom(categorias.consumible);
+  const b = getRandom(categorias.bebestible);
+  const a = getRandom(categorias.articulo);
+
+  consumibleIcon.innerHTML = c.imagen ? `<img src="${c.imagen}" width="80">` : defaultEmoji.consumible;
+  consumibleNombre.textContent = c.nombre;
+
+  bebestibleIcon.innerHTML = b.imagen ? `<img src="${b.imagen}" width="80">` : defaultEmoji.bebestible;
+  bebestibleNombre.textContent = b.nombre;
+
+  articuloIcon.innerHTML = a.imagen ? `<img src="${a.imagen}" width="80">` : defaultEmoji.articulo;
+  articuloNombre.textContent = a.nombre;
+}
+
+// Eventos
 aceptarBtn.onclick = () => {
   if (nombreInput.value.trim() !== "") {
     nombre = nombreInput.value.trim();
     modal.style.display = "none";
     intentos = 1;
-    saludo.textContent = `Hola “${nombre}”, ganaste lo siguiente:`;
+    saludo.textContent = `Hola "${nombre}", ganaste lo siguiente:`;
     generarConEfecto();
   }
 };
@@ -71,10 +85,15 @@ homeBtn.onclick = () => {
   nombre = "";
   intentos = 0;
   confirmado = false;
-  consumibleDiv.textContent = "Consumible";
-  bebestibleDiv.textContent = "Bebestible";
-  articuloDiv.textContent = "Artículo";
-  saludo.textContent = "Hola “Invitado”, ganaste lo siguiente:";
+
+  consumibleIcon.textContent = defaultEmoji.consumible;
+  consumibleNombre.textContent = "Consumible";
+  bebestibleIcon.textContent = defaultEmoji.bebestible;
+  bebestibleNombre.textContent = "Bebestible";
+  articuloIcon.textContent = defaultEmoji.articulo;
+  articuloNombre.textContent = "Artículo";
+
+  saludo.textContent = 'Hola "Invitado", ganaste lo siguiente:';
   modal.style.display = "flex";
   homeBtn.style.display = "none";
   confirmarBtn.style.display = "inline-block";
@@ -82,3 +101,9 @@ homeBtn.onclick = () => {
   reintentarBtn.disabled = false;
   reintentarBtn.textContent = "Reintentar";
 };
+
+// Cargar categorías
+fetch('./categorias.json')
+  .then(res => res.json())
+  .then(data => { categorias = data; })
+  .catch(err => console.error("Error al cargar las categorías:", err));

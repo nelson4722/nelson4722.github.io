@@ -1,50 +1,130 @@
 body { 
-  font-family: sans-serif; 
+  font-family: 'Arial', sans-serif; 
   text-align: center; 
   padding: 20px; 
+  background: #f2f2f2;
+  margin: 0;
+}
+
+#premiosContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* horizontal tipo tragamonedas */
+  overflow: hidden;
+  margin: 20px 0;
 }
 
 .card { 
-  display: inline-block; 
-  width: 150px; 
-  margin: 10px; 
-  padding: 20px; 
-  border: 1px solid #000; 
-  border-radius: 8px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 150px;
+  margin: 0 5px;
+  padding: 35px;
+  border-radius: 12px; 
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .emoji { 
-  font-size: 40px; 
-  margin-bottom: 10px; 
+  font-size: 60px; 
+  margin-bottom: 10px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nombre {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  word-break: break-word;
 }
 
 button { 
-  margin: 10px; 
-  padding: 10px 20px; 
-  border-radius: 6px; 
+  margin: 10px 5px; 
+  padding: 15px 25px; 
+  border-radius: 8px; 
   border: none; 
   color: #fff; 
   font-weight: bold; 
   cursor: pointer; 
+  font-size: 16px;
 }
 
 .green { background-color: #28a745; }
 .red { background-color: #dc3545; }
 .blue { background-color: #004b87; }
 
+/* Modal */
 #modal { 
   position: fixed; 
-  top:0; left:0; width:100%; height:100%; 
-  background:rgba(0,0,0,0.5); 
-  display:flex; justify-content:center; align-items:center; 
+  top: 0; left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0,0,0,0.6); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 10px;
 }
 
 #modalContent { 
-  background:#fff; padding:20px; border-radius:10px; width:300px; text-align:center; 
+  background:#fff; 
+  padding: 25px; 
+  border-radius: 12px; 
+  width: 90%;
+  max-width: 350px;
+  text-align: center; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 input { 
-  width: 80%; 
-  padding:8px; 
-  margin-bottom:10px; 
+  width: 90%; 
+  padding: 12px; 
+  margin-bottom: 15px; 
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Animación tipo tragamonedas */
+@keyframes spin {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+.card.spin .emoji {
+  animation: spin 0.15s infinite;
+}
+
+/* Adaptativo móvil */
+@media (max-width: 500px) {
+  .card {
+    width: 90px;
+    height: 120px;
+    padding: 10px;
+  }
+
+  .emoji {
+    font-size: 45px;
+    height: 55px;
+  }
+
+  .nombre {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
 }
